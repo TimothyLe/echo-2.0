@@ -1,134 +1,106 @@
-/* Serial 7-Segment Display Example Code
-    SPI Mode Stopwatch
-   by: Jim Lindblom
-     SparkFun Electronics
-   date: November 27, 2012
-   license: This code is public domain.
+/*
 
-   This example code shows how you could use the Arduino SPI 
-   library to interface with a Serial 7-Segment Display.
-
-   There are example functions for setting the display's
-   brightness, decimals and clearing the display.
-
-   The SPI.transfer() function is used to send a byte of the
-   SPI wires. Notice that each SPI transfer(s) is prefaced by
-   writing the SS pin LOW and closed by writing it HIGH.
-
-   Each of the custom functions handle the ssPin writes as well
-   as the SPI.transfer()'s.
-
-   There's a custom function used to send a sequence of bytes
-   over SPI - s7sSendStringSPI, which can be used somewhat like
-   the serial print statements.
-
-   Circuit:
-   Arduino -------------- Serial 7-Segment
-     5V   --------------------  VCC
-     GND  --------------------  GND
-      8   --------------------  SS
-     11   --------------------  SDI
-     13   --------------------  SCK
+Displays digits 0-9 on the 7-segment display
+    A
+   ---
+F |   | B
+  | G | 
+   ---
+E |   | C
+  |   | 
+   ---
+    D
+Pins 2-8 connects to the 7 segments of the display
 */
-#include <SPI.h> // Include the Arduino SPI library
 
-// Define the SS pin
-//  This is the only pin we can move around to any available
-//  digital pin.
-const int ssPin = 8;
+int pinA = 2;
+int pinB = 3;
+int pinC = 4;
+int pinD = 5;
+int pinE = 6;
+int pinF = 7;
+int pinG = 8;
 
-unsigned int counter = 0;  // This variable will count up to 65k
-char tempString[10];  // Will be used with sprintf to create strings
-
-void setup()
-{
-  // -------- SPI initialization
-  pinMode(ssPin, OUTPUT);  // Set the SS pin as an output
-  digitalWrite(ssPin, HIGH);  // Set the SS pin HIGH
-  SPI.begin();  // Begin SPI hardware
-  SPI.setClockDivider(SPI_CLOCK_DIV64);  // Slow down SPI clock
-  // --------
-
-  // Clear the display, and then turn on all segments and decimals
-  clearDisplaySPI();  // Clears display, resets cursor
-
-  // Custom function to send four bytes via SPI
-  //  The SPI.transfer function only allows sending of a single
-  //  byte at a time.
-  s7sSendStringSPI("-HI-");
-  setDecimalsSPI(0b111111);  // Turn on all decimals, colon, apos
-
-  // Flash brightness values at the beginning
-  setBrightnessSPI(0);  // Lowest brightness
-  delay(1500);
-  setBrightnessSPI(255);  // High brightness
-  delay(1500);
-
-  // Clear the display before jumping into loop
-  clearDisplaySPI();  
+// Setup runs once when you press reset
+void setup(){
+    // initialize digital pins as outputs
+    pinMode(pinA, OUTPUT);
+    pinMode(pinB, OUTPUT);
+    pinMode(pinC, OUTPUT);
+    pinMode(pinD, OUTPUT);
+    pinMode(pinE, OUTPUT);
+    pinMode(pinF, OUTPUT);
+    pinMode(pinG, OUTPUT);
+    // Digital pins
+    pinMode(D1, OUTPUT);
+    pinMode(D2, OUTPUT);
+    pinMode(D3, OUTPUT);
+    pinMode(D4, OUTPUT);
 }
 
-void loop()
-{
-  // Magical sprintf creates a string for us to send to the s7s.
-  //  The %4d option creates a 4-digit integer.
-  sprintf(tempString, "%4d", counter);
-
-  // This will output the tempString to the S7S
-  s7sSendStringSPI(tempString);
-
-  // Print the decimal at the proper spot
-  if (counter < 10000)
-    setDecimalsSPI(0b00000010);  // Sets digit 3 decimal on
-  else
-    setDecimalsSPI(0b00000100);
-
-  counter++;  // Increment the counter
-  delay(10);  // This will make the display update at 100Hz.*/
-}
-
-// This custom function works somewhat like a serial.print.
-//  You can send it an array of chars (string) and it'll print
-//  the first 4 characters in the array.
-void s7sSendStringSPI(String toSend)
-{
-  digitalWrite(ssPin, LOW);
-  for (int i=0; i<4; i++)
-  {
-    SPI.transfer(toSend[i]);
-  }
-  digitalWrite(ssPin, HIGH);
-}
-
-// Send the clear display command (0x76)
-//  This will clear the display and reset the cursor
-void clearDisplaySPI()
-{
-  digitalWrite(ssPin, LOW);
-  SPI.transfer(0x76);  // Clear display command
-  digitalWrite(ssPin, HIGH);
-}
-
-// Set the displays brightness. Should receive byte with the value
-//  to set the brightness to
-//  dimmest------------->brightest
-//     0--------127--------255
-void setBrightnessSPI(byte value)
-{
-  digitalWrite(ssPin, LOW);
-  SPI.transfer(0x7A);  // Set brightness command byte
-  SPI.transfer(value);  // brightness data byte
-  digitalWrite(ssPin, HIGH);
-}
-
-// Turn on any, none, or all of the decimals.
-//  The six lowest bits in the decimals parameter sets a decimal 
-//  (or colon, or apostrophe) on or off. A 1 indicates on, 0 off.
-//  [MSB] (X)(X)(Apos)(Colon)(Digit 4)(Digit 3)(Digit2)(Digit1)
-void setDecimalsSPI(byte decimals)
-{
-  digitalWrite(ssPin, LOW);
-  SPI.transfer(0x77);
-  SPI.transfer(decimals);
-  digitalWrite(ssPin, HIGH);
+// Continuous loop
+void loop(){
+    // 1st digit
+    digitalWrite(D1, HIGH);
+    digitalWrite(D1, LOW);
+    digitalWrite(D1, LOW);
+    digitalWrite(D1, LOW);
+    // Set to 0
+    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, LOW);
+    digitalWrite(pinC, LOW);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, LOW);
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    
+    // 2nd digit
+    digitalWrite(D1, LOW);
+    digitalWrite(D1, HIGH);
+    digitalWrite(D1, LOW);
+    digitalWrite(D1, LOW);
+    // Set to 1
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, LOW);
+    digitalWrite(pinC, LOW);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, HIGH);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    
+    // 3rd digit
+    digitalWrite(D1, LOW);
+    digitalWrite(D1, LOW);
+    digitalWrite(D1, HIGH);
+    digitalWrite(D1, LOW);
+    // Set to 2
+    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, LOW);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    
+    // 4th digit
+    digitalWrite(D1, LOW);
+    digitalWrite(D1, HIGH);
+    digitalWrite(D1, LOW);
+    digitalWrite(D1, LOW);
+    // Set to 3
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, LOW);
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
 }
