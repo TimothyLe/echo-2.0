@@ -59,7 +59,7 @@ void loop(){
     digitalWrite(pinF, HIGH);
     digitalWrite(pinG, HIGH);   
     // Prevents flickering
-    delay(10);                // internal synchronous clock waits for 0.001 second
+    delay(1);                // internal synchronous clock waits for 0.001 second
     
     // 2nd digit
     digitalWrite(D1, LOW);
@@ -75,7 +75,7 @@ void loop(){
     digitalWrite(pinF, HIGH);
     digitalWrite(pinG, LOW);   
     // Prevents flickering
-    delay(10);                // internal synchronous clock waits for 0.001 second
+    delay(1);                // internal synchronous clock waits for 0.001 second
     
     // 3rd digit
     digitalWrite(D1, LOW);
@@ -91,7 +91,7 @@ void loop(){
     digitalWrite(pinF, HIGH);
     digitalWrite(pinG, LOW);   
     // Prevents flickering
-    delay(10);                // internal synchronous clock waits for 0.001 second
+    delay(1);                // internal synchronous clock waits for 0.001 second
     
     // 4th digit
     digitalWrite(D1, LOW);
@@ -107,5 +107,5 @@ void loop(){
     digitalWrite(pinF, HIGH);
     digitalWrite(pinG, LOW);   
     // Prevents flickering
-    delay(10);                // internal synchronous clock waits for 0.001 second
+    delay(1);                // internal synchronous clock waits for 0.001 second
 }
