@@ -46,10 +46,10 @@ void setup(){
 // Continuous loop
 void loop(){
     // 1st digit
-    digitalWrite(D1, HIGH);
-    digitalWrite(D2, LOW);
-    digitalWrite(D3, LOW);
-    digitalWrite(D4, LOW);
+    digitalWrite(D1, LOW);
+    digitalWrite(D2, HIGH);
+    digitalWrite(D3, HIGH);
+    digitalWrite(D4, HIGH);
     // Set to 0
     digitalWrite(pinA, HIGH);
     digitalWrite(pinB, LOW);
@@ -62,10 +62,10 @@ void loop(){
     delay(1);                // internal synchronous clock waits for 0.001 second
     
     // 2nd digit
-    digitalWrite(D1, LOW);
-    digitalWrite(D2, HIGH);
-    digitalWrite(D3, LOW);
-    digitalWrite(D4, LOW);
+    digitalWrite(D1, HIGH);
+    digitalWrite(D2, LOW);
+    digitalWrite(D3, HIGH);
+    digitalWrite(D4, HIGH);
     // Set to 1
     digitalWrite(pinA, LOW);
     digitalWrite(pinB, HIGH);
@@ -78,10 +78,10 @@ void loop(){
     delay(1);                // internal synchronous clock waits for 0.001 second
     
     // 3rd digit
-    digitalWrite(D1, LOW);
-    digitalWrite(D2, LOW);
-    digitalWrite(D3, HIGH);
-    digitalWrite(D4, LOW);
+    digitalWrite(D1, HIGH);
+    digitalWrite(D2, HIGH);
+    digitalWrite(D3, LOW);
+    digitalWrite(D4, HIGH);
     // Set to 2
     digitalWrite(pinA, HIGH);
     digitalWrite(pinB, LOW);
@@ -94,10 +94,10 @@ void loop(){
     delay(1);                // internal synchronous clock waits for 0.001 second
     
     // 4th digit
-    digitalWrite(D1, LOW);
-    digitalWrite(D2, LOW);
-    digitalWrite(D3, LOW);
-    digitalWrite(D4, HIGH);
+    digitalWrite(D1, HIGH);
+    digitalWrite(D2, HIGH);
+    digitalWrite(D3, HIGH);
+    digitalWrite(D4, LOW);
     // Set to 3
     digitalWrite(pinA, HIGH);
     digitalWrite(pinB, LOW);
