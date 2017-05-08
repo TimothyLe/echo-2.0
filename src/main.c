@@ -76,34 +76,34 @@ void loop(){
     R2 = R1 * buffer;
     if(R2 > 9999){  //!< Overload
         // 3rd digit
-    digitalWrite(D1, HIGH);
-    digitalWrite(D2, HIGH);
-    digitalWrite(D3, LOW);
-    digitalWrite(D4, HIGH);
+    digitalWrite(D1, LOW);
+    digitalWrite(D2, LOW);
+    digitalWrite(D3, HIGH);
+    digitalWrite(D4, LOW);
     // Set to O
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, HIGH);   
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, HIGH);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
 
     // 4th digit
-    digitalWrite(D1, HIGH);
-    digitalWrite(D2, HIGH);
-    digitalWrite(D3, HIGH);
-    digitalWrite(D4, LOW);
+    digitalWrite(D1, LOW);
+    digitalWrite(D2, LOW);
+    digitalWrite(D3, LOW);
+    digitalWrite(D4, HIGH);
     // Set to L
-    digitalWrite(pinA, HIGH);
-    digitalWrite(pinB, HIGH);
-    digitalWrite(pinC, HIGH);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, HIGH);   
+    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, LOW);
+    digitalWrite(pinC, LOW);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, HIGH);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     }
@@ -125,479 +125,479 @@ void loop(){
     
   //!< S7S display
   // 1st digit
-    digitalWrite(D1, LOW);
-    digitalWrite(D2, HIGH);
-    digitalWrite(D3, HIGH);
-    digitalWrite(D4, HIGH);
+    digitalWrite(D1, HIGH);
+    digitalWrite(D2, LOW);
+    digitalWrite(D3, LOW);
+    digitalWrite(D4, LOW);
     //!< 0-9 SEGMENTS
     if(digit1 == 0){
         // Set to 0
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, HIGH);   
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, HIGH);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit1 == 1){
         // Set to 1
-    digitalWrite(pinA, HIGH);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, HIGH);
-    digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, HIGH);
-    digitalWrite(pinG, HIGH);   
+    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, LOW);
+    digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit1 == 2){
         // Set to 2
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, HIGH);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, HIGH);
-    digitalWrite(pinG, LOW);   
-    // Prevents flickering
-    delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit1 == 3){
-        // Set to 3
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, HIGH);
-    digitalWrite(pinG, LOW);   
-    // Prevents flickering
-    delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit1 == 4){
-        // Set to 4
     digitalWrite(pinA, HIGH);
-    digitalWrite(pinB, LOW);
+    digitalWrite(pinB, HIGH);
     digitalWrite(pinC, LOW);
     digitalWrite(pinD, HIGH);
     digitalWrite(pinE, HIGH);
     digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    } else if(digit1 == 3){
+        // Set to 3
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, LOW);
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    } else if(digit1 == 4){
+        // Set to 4
+    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit1 == 5){
         // Set to 5
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, HIGH);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, LOW);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit1 == 6){
         // Set to 6
-    digitalWrite(pinA, HIGH);
-    digitalWrite(pinB, HIGH);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
-    // Prevents flickering
-    delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit1 == 7){
-        // Set to 7
     digitalWrite(pinA, LOW);
     digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
+    digitalWrite(pinC, HIGH);
     digitalWrite(pinD, HIGH);
     digitalWrite(pinE, HIGH);
     digitalWrite(pinF, HIGH);
     digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit1 == 8){
-        // Set to 8
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
+    } else if(digit1 == 7){
+        // Set to 7
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
     digitalWrite(pinD, LOW);
     digitalWrite(pinE, LOW);
     digitalWrite(pinF, LOW);
     digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit1 == 9){
-        // Set to 9
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
+    } else if(digit1 == 8){
+        // Set to 8
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
     digitalWrite(pinD, HIGH);
     digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    } else if(digit1 == 9){
+        // Set to 9
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second   
     }
 
     
   // 2nd digit
-    digitalWrite(D1, HIGH);
-    digitalWrite(D2, LOW);
-    digitalWrite(D3, HIGH);
-    digitalWrite(D4, HIGH);
-    //!< 0-9 SEGMENTS
+    digitalWrite(D1, LOW);
+    digitalWrite(D2, HIGH);
+    digitalWrite(D3, LOW);
+    digitalWrite(D4, LOW);
+   //!< 0-9 SEGMENTS
     if(digit2 == 0){
         // Set to 0
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, HIGH);   
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, HIGH);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit2 == 1){
         // Set to 1
-    digitalWrite(pinA, HIGH);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, HIGH);
-    digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, HIGH);
-    digitalWrite(pinG, HIGH);   
+    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, LOW);
+    digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit2 == 2){
         // Set to 2
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, HIGH);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, HIGH);
-    digitalWrite(pinG, LOW);   
-    // Prevents flickering
-    delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit2 == 3){
-        // Set to 3
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, HIGH);
-    digitalWrite(pinG, LOW);   
-    // Prevents flickering
-    delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit2 == 4){
-        // Set to 4
     digitalWrite(pinA, HIGH);
-    digitalWrite(pinB, LOW);
+    digitalWrite(pinB, HIGH);
     digitalWrite(pinC, LOW);
     digitalWrite(pinD, HIGH);
     digitalWrite(pinE, HIGH);
     digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    } else if(digit2 == 3){
+        // Set to 3
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, LOW);
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    } else if(digit2 == 4){
+        // Set to 4
+    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit2 == 5){
         // Set to 5
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, HIGH);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, LOW);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit2 == 6){
         // Set to 6
-    digitalWrite(pinA, HIGH);
-    digitalWrite(pinB, HIGH);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
-    // Prevents flickering
-    delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit2 == 7){
-        // Set to 7
     digitalWrite(pinA, LOW);
     digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
+    digitalWrite(pinC, HIGH);
     digitalWrite(pinD, HIGH);
     digitalWrite(pinE, HIGH);
     digitalWrite(pinF, HIGH);
     digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit2 == 8){
-        // Set to 8
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
+    } else if(digit2 == 7){
+        // Set to 7
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
     digitalWrite(pinD, LOW);
     digitalWrite(pinE, LOW);
     digitalWrite(pinF, LOW);
     digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit2 == 9){
-        // Set to 9
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
+    } else if(digit2 == 8){
+        // Set to 8
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
     digitalWrite(pinD, HIGH);
     digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    } else if(digit2 == 9){
+        // Set to 9
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second   
     }
 
     
     // 3rd digit
-    digitalWrite(D1, HIGH);
-    digitalWrite(D2, HIGH);
-    digitalWrite(D3, LOW);
-    digitalWrite(D4, HIGH);
+    digitalWrite(D1, LOW);
+    digitalWrite(D2, LOW);
+    digitalWrite(D3, HIGH);
+    digitalWrite(D4, LOW);
     //!< 0-9 SEGMENTS
     if(digit3 == 0){
         // Set to 0
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, HIGH);   
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, HIGH);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit3 == 1){
         // Set to 1
-    digitalWrite(pinA, HIGH);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, HIGH);
-    digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, HIGH);
-    digitalWrite(pinG, HIGH);   
+    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, LOW);
+    digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit3 == 2){
         // Set to 2
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, HIGH);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, HIGH);
-    digitalWrite(pinG, LOW);   
-    // Prevents flickering
-    delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit3 == 3){
-        // Set to 3
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, HIGH);
-    digitalWrite(pinG, LOW);   
-    // Prevents flickering
-    delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit3 == 4){
-        // Set to 4
     digitalWrite(pinA, HIGH);
-    digitalWrite(pinB, LOW);
+    digitalWrite(pinB, HIGH);
     digitalWrite(pinC, LOW);
     digitalWrite(pinD, HIGH);
     digitalWrite(pinE, HIGH);
     digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    } else if(digit3 == 3){
+        // Set to 3
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, LOW);
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    } else if(digit3 == 4){
+        // Set to 4
+    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit3 == 5){
         // Set to 5
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, HIGH);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, LOW);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit3 == 6){
         // Set to 6
-    digitalWrite(pinA, HIGH);
-    digitalWrite(pinB, HIGH);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
-    // Prevents flickering
-    delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit3 == 7){
-        // Set to 7
     digitalWrite(pinA, LOW);
     digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
+    digitalWrite(pinC, HIGH);
     digitalWrite(pinD, HIGH);
     digitalWrite(pinE, HIGH);
     digitalWrite(pinF, HIGH);
     digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit3 == 8){
-        // Set to 8
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
+    } else if(digit3 == 7){
+        // Set to 7
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
     digitalWrite(pinD, LOW);
     digitalWrite(pinE, LOW);
     digitalWrite(pinF, LOW);
     digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit3 == 9){
-        // Set to 9
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
+    } else if(digit3 == 8){
+        // Set to 8
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
     digitalWrite(pinD, HIGH);
     digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    } else if(digit3 == 9){
+        // Set to 9
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second   
     }
 
     
     // 4th digit
-    digitalWrite(D1, HIGH);
-    digitalWrite(D2, HIGH);
-    digitalWrite(D3, HIGH);
-    digitalWrite(D4, LOW);
+    digitalWrite(D1, LOW);
+    digitalWrite(D2, LOW);
+    digitalWrite(D3, LOW);
+    digitalWrite(D4, HIGH);
     //!< 0-9 SEGMENTS
-    if(digit3 == 0){
+    if(digit4 == 0){
         // Set to 0
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, HIGH);   
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, HIGH);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit4 == 1){
         // Set to 1
-    digitalWrite(pinA, HIGH);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, HIGH);
-    digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, HIGH);
-    digitalWrite(pinG, HIGH);   
+    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, LOW);
+    digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit4 == 2){
         // Set to 2
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, HIGH);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, HIGH);
-    digitalWrite(pinG, LOW);   
-    // Prevents flickering
-    delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit4 == 3){
-        // Set to 3
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, HIGH);
-    digitalWrite(pinG, LOW);   
-    // Prevents flickering
-    delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit4 == 4){
-        // Set to 4
     digitalWrite(pinA, HIGH);
-    digitalWrite(pinB, LOW);
+    digitalWrite(pinB, HIGH);
     digitalWrite(pinC, LOW);
     digitalWrite(pinD, HIGH);
     digitalWrite(pinE, HIGH);
     digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    } else if(digit4 == 3){
+        // Set to 3
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, LOW);
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    } else if(digit4 == 4){
+        // Set to 4
+    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit4 == 5){
         // Set to 5
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, HIGH);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, LOW);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, HIGH);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
     } else if(digit4 == 6){
         // Set to 6
-    digitalWrite(pinA, HIGH);
-    digitalWrite(pinB, HIGH);
-    digitalWrite(pinC, LOW);
-    digitalWrite(pinD, LOW);
-    digitalWrite(pinE, LOW);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
-    // Prevents flickering
-    delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit4 == 7){
-        // Set to 7
     digitalWrite(pinA, LOW);
     digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
+    digitalWrite(pinC, HIGH);
     digitalWrite(pinD, HIGH);
     digitalWrite(pinE, HIGH);
     digitalWrite(pinF, HIGH);
     digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit4 == 8){
-        // Set to 8
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
+    } else if(digit4 == 7){
+        // Set to 7
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
     digitalWrite(pinD, LOW);
     digitalWrite(pinE, LOW);
     digitalWrite(pinF, LOW);
     digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second
-    } else if(digit4 == 9){
-        // Set to 9
-    digitalWrite(pinA, LOW);
-    digitalWrite(pinB, LOW);
-    digitalWrite(pinC, LOW);
+    } else if(digit4 == 8){
+        // Set to 8
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
     digitalWrite(pinD, HIGH);
     digitalWrite(pinE, HIGH);
-    digitalWrite(pinF, LOW);
-    digitalWrite(pinG, LOW);   
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+    } else if(digit4 == 9){
+        // Set to 9
+    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
+    digitalWrite(pinC, HIGH);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, HIGH);
+    digitalWrite(pinG, HIGH);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second   
-    } 
+    }
   }
   delay(1);
 }
