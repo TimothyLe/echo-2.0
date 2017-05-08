@@ -68,7 +68,7 @@ void loop(){
     Vout = (buffer)/1024.0;  // 0 - 1023 bits 
     buffer = (Vin/Vout) -1;
     R2 = R1 * buffer;
-    if(R2 > 9999.0){  //!< Overload
+    if(R2 > 500000.0){  //!< Overload
         // 1st digit
     digitalWrite(D1, LOW);
     digitalWrite(D2, LOW);
@@ -140,15 +140,17 @@ void loop(){
     int digit1 = 0, digit2 = 0, digit3 = 0, digit4 = 0;
     int num = (int)R2;
     int r;
+    r = num % 100000;
+    digit1 = (num - r) / 100000;
+    num = r;
+    r = num % 10000;
+    digit2 = (num - r) / 10000;
+    num = r;
     r = num % 1000;
-    digit1 = (num - r) / 1000;
+    digit3 = (num - r) / 1000;
     num = r;
     r = num % 100;
-    digit2 = (num - r) / 100;
-    num = r;
-    r = num % 10;
-    digit3 = (num - r) / 10;
-    digit4 = r;
+    digit4 = (num - r) / 100;
     
     
   //!< S7S display
