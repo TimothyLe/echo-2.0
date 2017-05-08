@@ -42,12 +42,6 @@ int D2 = 10;
 int D3 = 11;
 int D4 = 13;
 
-// Resistor representation of digits
-int digit1 = 0;
-int digit2 = 0;
-int digit3 = 0;
-int digit4 = 0;
-
 void setup(){
   Serial.begin(9600); // baud rate
 
@@ -74,7 +68,39 @@ void loop(){
     Vout = (buffer)/1024.0;  // 0 - 1023 bits 
     buffer = (Vin/Vout) -1;
     R2 = R1 * buffer;
-    if(R2 > 9999){  //!< Overload
+    if(R2 > 9999.0){  //!< Overload
+        // 1st digit
+    digitalWrite(D1, LOW);
+    digitalWrite(D2, LOW);
+    digitalWrite(D3, LOW);
+    digitalWrite(D4, HIGH);
+    // Set to None
+    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, LOW);
+    digitalWrite(pinC, LOW);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, LOW);
+    digitalWrite(pinG, LOW);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+        
+        // 2nd digit
+    digitalWrite(D1, LOW);
+    digitalWrite(D2, HIGH);
+    digitalWrite(D3, LOW);
+    digitalWrite(D4, LOW);
+    // Set to None
+    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, LOW);
+    digitalWrite(pinC, LOW);
+    digitalWrite(pinD, LOW);
+    digitalWrite(pinE, LOW);
+    digitalWrite(pinF, LOW);
+    digitalWrite(pinG, LOW);   
+    // Prevents flickering
+    delay(1);                // internal synchronous clock waits for 0.001 second
+        
         // 3rd digit
     digitalWrite(D1, LOW);
     digitalWrite(D2, LOW);
@@ -110,6 +136,8 @@ void loop(){
     
     
     //!< Getting the digits
+    // Resistor representation of digits
+    int digit1 = 0, digit2 = 0, digit3 = 0, digit4 = 0;
     int num = (int)R2;
     int r;
     r = num % 1000;
