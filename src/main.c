@@ -74,13 +74,6 @@ void loop(){
     Vout = (buffer)/1024.0;  // 0 - 1023 bits 
     buffer = (Vin/Vout) -1;
     R2 = R1 * buffer;
-    Serial.print("Vout: ");
-    Serial.println(Vout);
-    Serial.print("R2: ");
-    Serial.println(R2);
-    delay(1000);
-  }
-
     if(R2 > 9999){  //!< Overload
         // 3rd digit
     digitalWrite(D1, HIGH);
@@ -604,5 +597,7 @@ void loop(){
     digitalWrite(pinG, LOW);   
     // Prevents flickering
     delay(1);                // internal synchronous clock waits for 0.001 second   
-    }
+    } 
+  }
+  delay(1);
 }
