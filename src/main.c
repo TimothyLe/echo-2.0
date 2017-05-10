@@ -265,11 +265,4 @@ void loop(){
   }
  }
   
-  digitalWrite(D1, LOW);
-  digitalWrite(D2, LOW);
-  digitalWrite(D3, LOW);
-  digitalWrite(D4, LOW);
-}
-}
-
-
+  
