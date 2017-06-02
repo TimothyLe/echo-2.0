@@ -2,13 +2,13 @@
   Echo 2.0
 </h1>
 
-<h3 align="center">A bluetooth-enabled optic sensing device designed for Electronics in Embedded Systems  </h3>
-
 <div align="center">
     <img src="https://github.com/TimothyLe/echo-2.0/blob/master/images/full-machine.JPG" alt="Bluetooth-Enabled Optic Sensing Device" />
 </div>
 
 <br />  
+
+<h3 align="center">A bluetooth-enabled optic sensing device designed for Electronics in Embedded Systems  </h3>
 
 ## Read more
 Feel free to read our documentation on this project and look at our specs, schematics, operations, etc:   
