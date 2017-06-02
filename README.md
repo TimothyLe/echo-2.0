@@ -1,2 +1,4 @@
 # echo-2.0
-A project for Electronics in Embedded Systems that utilizes speech recognition, light sensors, temperature sensors, and bluetooth. 
+A bluetooth-enabled optic sensing device designed for ELectronics in Embedded Systems  
+
+
