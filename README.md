@@ -6,9 +6,8 @@
     <img src="https://github.com/TimothyLe/echo-2.0/blob/master/images/full-machine.JPG" alt="Bluetooth-Enabled Optic Sensing Device" />
 </div>
 
+<p align="center">A bluetooth-enabled optic sensing device designed for Electronics in Embedded Systems  </p>
 <br />  
-
-<h3 align="center">A bluetooth-enabled optic sensing device designed for Electronics in Embedded Systems  </h3>
 
 ## Read more
 Feel free to read our documentation on this project and look at our specs, schematics, operations, etc:   
